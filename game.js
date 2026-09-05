@@ -1,3 +1,25 @@
+let cheatBuffer = "";
+
+window.addEventListener("keydown", (e) => {
+  if (!state.running) return;
+
+  if (e.key.length === 1) {
+    cheatBuffer += e.key.toLowerCase();
+
+    if (cheatBuffer.length > 10) {
+      cheatBuffer = cheatBuffer.slice(-10);
+    }
+
+    if (cheatBuffer.endsWith("coins")) {
+      state.coins += 100;
+      localStorage.setItem("skyHopperCoins", state.coins);
+      cheatBuffer = "";
+
+      // Update the coin display
+      updateCoinUI();
+    }
+  }
+});
 const canvas=document.getElementById("game"),ctx=canvas.getContext("2d"),W=canvas.width,H=canvas.height;
 const menu=document.getElementById("menu"),shop=document.getElementById("shop"),gameOver=document.getElementById("gameOver"),hud=document.getElementById("hud");
 const scoreEl=document.getElementById("score"),bestEl=document.getElementById("bestScore"),topCoinsEl=document.getElementById("topCoins"),shopCoinsEl=document.getElementById("shopCoins"),runCoinsEl=document.getElementById("runCoins"),earnedCoinsEl=document.getElementById("earnedCoins"),finalScoreEl=document.getElementById("finalScore"),finalBestEl=document.getElementById("finalBest"),skinsEl=document.getElementById("skins"),menuBird=document.getElementById("menuBird");
