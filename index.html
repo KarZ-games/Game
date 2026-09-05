@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sky Hopper</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="game-shell">
+    <div class="topbar">
+      <div class="brand">SKY HOPPER</div>
+      <div class="stats">
+        <span>BEST <b id="bestScore">0</b></span>
+      </div>
+    </div>
+
+    <section class="game-card">
+      <canvas id="game" width="480" height="720" aria-label="Sky Hopper game"></canvas>
+
+      <div id="menu" class="overlay">
+        <div class="panel">
+          <div class="bird-preview">🐦</div>
+          <h1>SKY HOPPER</h1>
+          <p>Flap through the gaps. Don't hit the pipes.</p>
+          <button id="playBtn">PLAY</button>
+          <div class="hint">SPACE / CLICK / TAP TO FLAP</div>
+        </div>
+      </div>
+
+      <div id="gameOver" class="overlay hidden">
+        <div class="panel">
+          <div class="small-title">GAME OVER</div>
+          <div class="score-big" id="finalScore">0</div>
+          <div class="best-line">BEST <b id="finalBest">0</b></div>
+          <button id="againBtn">PLAY AGAIN</button>
+          <button id="menuBtn" class="secondary">MAIN MENU</button>
+        </div>
+      </div>
+
+      <div id="hud" class="hud hidden">
+        <div id="score">0</div>
+      </div>
+    </section>
+
+    <p class="footer">A tiny browser game — made with HTML, CSS & JavaScript.</p>
+  </main>
+
+  <script src="game.js"></script>
+</body>
+</html>
