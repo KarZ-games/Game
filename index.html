@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sky Hopper</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<main class="game-shell">
+  <div class="topbar">
+    <div class="brand">SKY HOPPER</div>
+    <div class="stats"><span>🪙 <b id="topCoins">0</b></span><span>BEST <b id="bestScore">0</b></span></div>
+  </div>
+
+  <section class="game-card">
+    <canvas id="game" width="480" height="720"></canvas>
+
+    <div id="menu" class="overlay">
+      <div class="panel">
+        <div class="bird-preview" id="menuBird">🐦</div>
+        <h1>SKY HOPPER</h1>
+        <p>Flap through the gaps. Collect coins. Don't hit the pipes.</p>
+        <button id="playBtn">PLAY</button>
+        <button id="shopBtn" class="secondary">🛒 SHOP</button>
+        <div class="hint">SPACE / CLICK / TAP TO FLAP</div>
+      </div>
+    </div>
+
+    <div id="shop" class="overlay hidden">
+      <div class="panel shop-panel">
+        <div class="shop-header">
+          <div><div class="small-title">SKY HOPPER</div><h2>SHOP</h2></div>
+          <div class="coin-count">🪙 <b id="shopCoins">0</b></div>
+        </div>
+        <div id="skins" class="skins"></div>
+        <button id="closeShop" class="secondary">BACK</button>
+      </div>
+    </div>
+
+    <div id="gameOver" class="overlay hidden">
+      <div class="panel">
+        <div class="small-title">GAME OVER</div>
+        <div class="score-big" id="finalScore">0</div>
+        <div class="best-line">BEST <b id="finalBest">0</b></div>
+        <div class="coin-earned">🪙 +<b id="earnedCoins">0</b></div>
+        <button id="againBtn">PLAY AGAIN</button>
+        <button id="menuBtn" class="secondary">MAIN MENU</button>
+      </div>
+    </div>
+
+    <div id="hud" class="hud hidden">
+      <div id="score">0</div>
+      <div id="coinHud">🪙 <span id="runCoins">0</span></div>
+    </div>
+  </section>
+  <p class="footer">A tiny browser game — made with HTML, CSS & JavaScript.</p>
+</main>
+<script src="game.js"></script>
+</body>
+</html>
